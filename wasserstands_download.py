@@ -3,6 +3,7 @@ import time
 import os
 import datetime
 import PyPDF2
+from datetime import date
 
 
 def download_pdf():
@@ -14,6 +15,12 @@ def delete_pdf():
     #Nachdem die Daten aus der pdf-Datei ausgelesen werden muss ich die pdf-Datei löschen.
     os.system("rm hochwasserdaten.pdf")
     print(str(datetime.datetime.now()) + " -- pdf-Datei gelöscht.")
+
+def move_pdf():
+    # Statt die pdf zu löschen kann man sie auch in einen Ordner schieben und umbenenen.
+    # Dann kann ich die Dtaen im Nachhinein kontrollieren
+    today = date.today()
+    os.system("mv hochwasserdaten.pdf archiv/hochwasserdaten_" + str(today) + ".pdf")
 
 def read_pdf_write_csv():
     #Öffnen der Datei - der Modus "rb" öffnet die Datei als binary file
@@ -48,12 +55,17 @@ def read_pdf_write_csv():
     csv_datei.write(zeile)
     csv_datei.close()
     print(str(datetime.datetime.now()) + " -- csv-Datei geschrieben.")
+
+def build_and_write_jpeg():
+    os.system("Rscript auswertung.R")
+    os.system("mv oder_plot.jpg soese_plot.jpg ecker_plot.jpg oker_plot.jpg grane_plot.jpg innerste_plot.jpg /var/www/html/img/")
        
 
 
 schedule.every().day.at("11:02").do(download_pdf)
 schedule.every().day.at("11:04").do(read_pdf_write_csv)
-schedule.every().day.at("11:06").do(delete_pdf)
+schedule.every().day.at("11:06").do(move_pdf)
+schedule.every().day.at("11:08").do(build_and_write_jpeg)
 
 while True:
     schedule.run_pending()

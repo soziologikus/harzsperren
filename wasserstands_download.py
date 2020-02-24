@@ -39,12 +39,13 @@ def read_pdf_write_csv():
     #Auslesen der Daten aus der Listenvariable
     datum = split_page_content[8]
 
-    oder = datum + ";" + split_page_content[24] + ";" + split_page_content[27] + ";" + split_page_content[28] + ";" + split_page_content[29] + ";" + split_page_content[30]
-    soese = datum + ";" + split_page_content[31] + ";" + split_page_content[34] + ";" + split_page_content[35] + ";" + split_page_content[36] + ";" + split_page_content[37]
-    ecker = datum + ";" + split_page_content[38] + ";" + split_page_content[41] + ";" + split_page_content[42] + ";" + split_page_content[43] + ";" + split_page_content[44]
-    oker = datum + ";" + split_page_content[45] + ";" + split_page_content[48] + ";" + split_page_content[49] + ";" + split_page_content[50] + ";" + split_page_content[51]
-    grane = datum + ";" + split_page_content[52] + ";" + split_page_content[55] + ";" + split_page_content[56] + ";" + split_page_content[57] + ";" + split_page_content[58]
-    innerste = datum + ";" + split_page_content[59] + ";" + split_page_content[62] + ";" + split_page_content[63] + ";" + split_page_content[64] + ";" + split_page_content[65]
+    #Herstellen einzelner Strings mit den entsprechenden Daten aus der pdf-Datei
+    oder = datum + ";" + split_page_content[split_page_content.index("Oder")] + ";" + split_page_content[split_page_content.index("Oder")+3] + ";" + split_page_content[split_page_content.index("Oder")+4] + ";" + split_page_content[split_page_content.index("Oder")+5] + ";" + split_page_content[split_page_content.index("Oder")+6]
+    soese = datum + ";" + split_page_content[split_page_content.index("Söse")] + ";" + split_page_content[split_page_content.index("Söse")+3] + ";" + split_page_content[split_page_content.index("Söse")+4] + ";" + split_page_content[split_page_content.index("Söse")+5] + ";" + split_page_content[split_page_content.index("Söse")+6]
+    ecker = datum + ";" + split_page_content[split_page_content.index("Ecker")] + ";" + split_page_content[split_page_content.index("Ecker")+3] + ";" + split_page_content[split_page_content.index("Ecker")+4] + ";" + split_page_content[split_page_content.index("Ecker")+5] + ";" + split_page_content[split_page_content.index("Ecker")+6]
+    oker = datum + ";" + split_page_content[split_page_content.index("Oker")] + ";" + split_page_content[split_page_content.index("Oker")+3] + ";" + split_page_content[split_page_content.index("Oker")+4] + ";" + split_page_content[split_page_content.index("Oker")+5] + ";" + split_page_content[split_page_content.index("Oker")+6]
+    grane = datum + ";" + split_page_content[split_page_content.index("Grane")] + ";" + split_page_content[split_page_content.index("Grane")+3] + ";" + split_page_content[split_page_content.index("Grane")+4] + ";" + split_page_content[split_page_content.index("Grane")+5] + ";" + split_page_content[split_page_content.index("Grane")+6]
+    innerste = datum + ";" + split_page_content[split_page_content.index("Innerste")] + ";" + split_page_content[split_page_content.index("Innerste")+3] + ";" + split_page_content[split_page_content.index("Innerste")+4] + ";" + split_page_content[split_page_content.index("Innerste")+5] + ";" + split_page_content[split_page_content.index("Innerste")+6]
 
     #Jetzt füge ich alle ausgelesenen strings in eine Stringvariable namens "zeile"
     zeile = oder + "\n" + soese + "\n" + ecker + "\n" + oker + "\n" + grane + "\n" + innerste + "\n"

@@ -18,25 +18,25 @@ grane <- harzer_wasserstaende_clean[ which(harzer_wasserstaende_clean$talsperre=
 innerste <- harzer_wasserstaende_clean[ which(harzer_wasserstaende_clean$talsperre=="Innerste"), ]
 
 jpeg("oder_plot.jpg")
-plot(oder$datum, oder$stauinhaltfuellungsgrad, type="l")
+plot(oder$datum, oder$stauinhaltfuellungsgrad, type="l", main = "Stauinhaltfüllungsgrad der Talsperre 'Oder'", xlab="Datum", ylab="Prozent (%)")
 dev.off()
 
 jpeg("soese_plot.jpg")
-plot(soese$datum, soese$stauinhaltfuellungsgrad, type="l")
+plot(soese$datum, soese$stauinhaltfuellungsgrad, type="l", main = "Stauinhaltfüllungsgrad der Talsperre 'Söse'", xlab="Datum", ylab="Prozent (%)")
 dev.off()
 
 jpeg("ecker_plot.jpg")
-plot(ecker$datum, ecker$stauinhaltfuellungsgrad, type="l")
+plot(ecker$datum, ecker$stauinhaltfuellungsgrad, type="l", main = "Stauinhaltfüllungsgrad der Talsperre 'Ecker'", xlab="Datum", ylab="Prozent (%)")
 dev.off()
 
 jpeg("oker_plot.jpg")
-plot(oker$datum, oker$stauinhaltfuellungsgrad, type="l")
+plot(oker$datum, oker$stauinhaltfuellungsgrad, type="l", main = "Stauinhaltfüllungsgrad der Talsperre 'Oker'", xlab="Datum", ylab="Prozent (%)")
 dev.off()
 
 jpeg("grane_plot.jpg")
-plot(grane$datum, grane$stauinhaltfuellungsgrad, type="l")
+plot(grane$datum, grane$stauinhaltfuellungsgrad, type="l", main = "Stauinhaltfüllungsgrad der Talsperre 'Grane'", xlab="Datum", ylab="Prozent (%)")
 dev.off()
 
 jpeg("innerste_plot.jpg")
-plot(innerste$datum, innerste$stauinhaltfuellungsgrad, type="l")
+plot(innerste$datum, innerste$stauinhaltfuellungsgrad, type="l", main = "Stauinhaltfüllungsgrad der Talsperre 'Innerste'", xlab="Datum", ylab="Prozent (%)")
 dev.off()

@@ -52,13 +52,13 @@ def read_pdf_write_csv():
     print(str(datetime.datetime.now()) + " -- Daten aus der pdf-Datei ausgelesen.")
     
     #Jetzt schreibe ich die Daten in eine csv-Datei
-    csv_datei = open("harzer_wasserstaende.csv", "a")
+    csv_datei = open("harzsperren_wasserstaende.csv", "a")
     csv_datei.write(zeile)
     csv_datei.close()
     print(str(datetime.datetime.now()) + " -- csv-Datei geschrieben.")
 
 def build_and_write_jpeg():
-    os.system("Rscript auswertung.R")
+    os.system("Rscript harzsperren_auswertung.R")
     os.system("mv oder_plot.jpg soese_plot.jpg ecker_plot.jpg oker_plot.jpg grane_plot.jpg innerste_plot.jpg /var/www/html/img/")
        
 
